@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <!--Busque su emoji en https://www.w3schools.com/html/html_emojis.asp-->
+        <title>🦦 ¡Segunda clase!</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <p> 
+                <a href="index.html">Bienvenide</a>
+                <a href="page.html"class="activo">Dibuje</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p>Dibuja mi</p>
+            <p>Dibuja mientras haces <code>mouseDragged()</code></p>            
+        </header>
+        <main>
+        </main>
+        <aside>
+            <button onclick="foto()">📥</button>
+            <button onclick="borra()">📛</button>
+        </aside>
+        <script>
+            var saludo = {
+                arriba:["¡Hola mundo!","¡Hola universo!", "¡Hola orbe!", "¡Hola cosmos!","Hello world!","γεια σου κόσμε","Hallo Welt"],
+                abajo:"Mi nombre es Kimberly McCartney"
+            };
+            var titular;
+            var nombre;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                //selecciona un par de colores en https://materialui.co/colors
+                background('#E1BEE7');
+                stroke('#4A148C');
+                titular = select('h1');
+                titular.html(random(saludo.arriba));
+                nombre = select('h2');
+                nombre.html(saludo.abajo);
+            };
+            function draw() {
+                //background('#E1BEE7');
+                //textSize(48);
+                //text("🦦",mouseX, mouseY);
+            }
+
+            function mouseDragged() {
+            line(pmouseX, pmouseY, mouseX, mouseY);
+            }
+
+            function foto(){
+                saveCanvas("mi-dibujo.jpg");
+            }
+
+            function borra(){
+                background('#E1BEE7');
+            }
+
+        </script>
+    </body>
+</html>
